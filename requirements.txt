@@ -1,0 +1,13 @@
+pandas
+requests
+beautifulsoup4
+lxml
+openpyxl
+tqdm
+matplotlib
+seaborn
+wordcloud
+jieba
+snownlp
+transformers
+torch
