@@ -13,7 +13,7 @@ net_space/
 │   ├── processed/          # 处理后的数据
 │   └── raw/                # 原始数据
 ├── notebooks/              # Jupyter 笔记本
-│   └── weibo_data_collection.ipynb  # 数据采集笔记本
+│   └── data_collection.ipynb  # 数据采集笔记本
 ├── reports/                # 报告和可视化结果
 │   ├── figures/            # 图表文件
 │   └── visualization_summary.json  # 可视化总结
@@ -22,6 +22,7 @@ net_space/
 │   ├── sentiment_analysis.py # 情感分析
 │   └── visualize_sentiment.py # 可视化
 ├── config.json             # 配置文件（关键词、Cookie 等）
+├── .env                    # 环境变量文件（敏感信息）
 ├── README.md               # 项目说明
 ├── requirements.txt        # 依赖列表
 └── .gitignore              # Git 忽略文件
@@ -64,7 +65,7 @@ net_space/
    - 编辑 `config.json` 文件，设置关键词、Cookie 等参数
 
 4. 数据采集：
-   - 打开 `notebooks/weibo_data_collection.ipynb`
+   - 打开 `notebooks/data_collection.ipynb`
    - 运行笔记本采集数据
 
 5. 数据预处理：
@@ -86,12 +87,18 @@ net_space/
 
 编辑 `config.json` 文件来自定义参数：
 
+- `data_source`: 数据源类型（目前支持 "weibo"）
+- `sentiment_engine`: 情感分析引擎（"snownlp" 或 "transformers"）
 - `TOPICS`: 关键词列表
-- `COOKIE_STR`: 微博 Cookie 字符串
 - `HTTP_INTERVAL`: 请求间隔
 - `PAGE_DEPTH`: 页面深度
 - `MAX_COMMENTS`: 最大评论数
 - `MIN_TOTAL_RECORDS` / `MAX_TOTAL_RECORDS`: 记录数范围
+- `output_dir`: 输出目录
+- `font_path`: 字体路径
+- `model_name`: 模型名称（用于 transformers）
+
+敏感信息如 Cookie 请放在 `.env` 文件中。
 
 ## 注意事项
 
